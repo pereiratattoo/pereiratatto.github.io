@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Painel Pereira Tattoo</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<h1>Painel Admin</h1>
+
+<input id="name" placeholder="Nome do produto"><br><br>
+<input id="price" placeholder="Preço"><br><br>
+
+<button onclick="add()">Adicionar Produto</button>
+
+<script>
+
+function add(){
+
+let name = document.getElementById("name").value;
+let price = document.getElementById("price").value;
+
+let products = JSON.parse(localStorage.getItem("products") || "[]");
+
+products.push({name,price});
+
+localStorage.setItem("products", JSON.stringify(products));
+
+alert("Produto adicionado");
+
+}
+
+</script>
+
+</body>
+</html>
